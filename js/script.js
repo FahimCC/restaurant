@@ -1,15 +1,36 @@
+const searchValue = document
+	.getElementById('search-btn')
+	.addEventListener('click', () => {
+		const searchValue = document.getElementById('search-value').value;
+		document.getElementById('search-value').value = '';
+		const capitalizeValue =
+			searchValue.charAt(0).toUpperCase() + searchValue.slice(1);
+		// console.log(capitalizeValue);
+		loadMeal(capitalizeValue);
+	});
+
 // fetch API
-const loadMeal = async () => {
-	const URL = 'https://themealdb.com/api/json/v1/1/search.php?s=Chicken';
-	const res = await fetch(URL);
-	const data = await res.json();
-	displayMeal(data.meals);
+const loadMeal = (foodCategory = 'Chicken') => {
+	const URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${foodCategory}`;
+	// console.log(URL, foodCategory);
+	fetch(URL)
+		.then(res => res.json())
+		.then(data => displayMeal(data.meals))
+		.catch(error => {
+			document.getElementById(
+				'food'
+			).innerText = `Your query didn't match with any cuisine.
+				Please try again...`;
+		});
 };
 
 // display food data
 const displayMeal = meals => {
 	const mealContainer = document.getElementById('meal-container');
-	for (const meal of meals) {
+	mealContainer.innerText = '';
+	document.getElementById('food').innerText = `Your Favourite Food`;
+
+	meals.slice(0, 6).forEach(meal => {
 		// console.log(meal);
 		const food = document.createElement('div');
 		food.innerHTML = `
@@ -25,7 +46,7 @@ const displayMeal = meals => {
 										}</h2>
                     <p class="text-lg font-normal my-4 text-[#706F6F]">${meal.strInstructions
 											.split(' ')
-											.slice(0, 10)
+											.slice(0, 15)
 											.join(' ')}...</p>
                     <!-- The button to open modal -->
                     <label
@@ -40,7 +61,7 @@ const displayMeal = meals => {
             </div>
         `;
 		mealContainer.appendChild(food);
-	}
+	});
 };
 
 // again fetch API
