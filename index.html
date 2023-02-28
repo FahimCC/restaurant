@@ -57,6 +57,13 @@
 			class="container md:container lg:container my-7 flex flex-col gap-4 md:flex-row justify-between items-center"
 		>
 			<h1 class="text-3xl font-bold">Tasty HUT</h1>
+			<label class="swap swap-flip text-5xl">
+				<!-- this hidden checkbox controls the state -->
+				<input type="checkbox" />
+
+				<div class="swap-on">😈</div>
+				<div class="swap-off">😇</div>
+			</label>
 			<button
 				class="bg-warning py-4 px-10 rounded-lg font-bold text-xl capitalize"
 			>
@@ -106,30 +113,30 @@
 					Your Favourite Food
 				</h1>
 				<div
-					id="food-container"
+					id="meal-container"
 					class="grid grid-cols-1 lg:grid-cols-2 gap-10 my-12"
 				>
-					<div class="flex flex-wrap md:flex-nowrap items-center gap-5">
+					<!-- <div class="flex flex-wrap md:flex-nowrap items-center gap-5">
 						<img
 							src="https://picsum.photos/600"
 							class="rounded-tr-xl rounded-tl-xl w-full md:h-[300px] md:w-[230px]"
 							alt="Movie"
 						/>
 						<div>
-							<h2 class="text-2xl font-bold tetx-[#403F3F]">Chicken Handi</h2>
+							<h2 class="text-2xl font-bold text-[#403F3F]">Chicken Handi</h2>
 							<p class="text-lg font-normal my-4 text-[#706F6F]">
 								There are many variations of passages of available, but the
 								majority have suffered
 							</p>
-							<!-- The button to open modal -->
+							The button to open modal
 							<label
-								for="food-details"
+								for="meal-details"
 								class="text-lg font-semibold text-warning underline cursor-pointer"
 							>
 								View Details
 							</label>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</section>
 		</main>
@@ -190,39 +197,42 @@
 
 		<!-- Modal -->
 		<input type="checkbox" id="food-details" class="modal-toggle" />
-		<div class="modal modal-bottom sm:modal-middle">
-			<div class="modal-box px-10">
-				<h3 class="font-bold text-3xl">Chicken Handi</h3>
+		<div class="modal">
+			<div class="modal-box max-w-xl px-10 text-xs">
+				<h3 id="food-title" class="font-bold text-lg lg:text-3xl">
+					Chicken Handi
+				</h3>
 				<img
-					src="https://picsum.photos/600/400"
+					id="food-image"
+					src="https://picsum.photos/400/200"
 					alt=""
-					class="w-full rounded-lg my-7"
+					class="w-full h-auto md:h-[350px] rounded-lg my-7"
 				/>
-				<p class="font-medium text-lg my-3">
-					Category : <span class="font-normal">Chicken</span>
+				<p class="font-medium my-3">
+					Category : <span id="food-category" class="font-normal">Chicken</span>
 				</p>
-				<p class="font-medium text-lg my-3">
-					Area : <span class="font-normal">Japanese</span>
+				<p class="font-medium my-3">
+					Area : <span id="food-area" class="font-normal">Japanese</span>
 				</p>
-				<p class="font-medium text-lg my-3">
+				<p class="font-medium my-3 h-20 overflow-x-auto">
 					Instructions :
-					<span class="font-normal"
+					<span id="food-instructions" class="font-normal"
 						>AThere are many variations of passages of Lorem Ipsum available,
 						but the majority have suffered alteration in some form, by injected
 						humour, or randomised words which don't look even slightly
 						believable.
 					</span>
 				</p>
-				<p class="font-medium text-lg my-3">
+				<p class="font-medium my-3">
 					Youtube :
-					<span class="font-normal"
-						>https://www.youtube.com/watch?v=WnpbKoYhTEY</span
+					<a id="food-youtube" class="font-normal" href="#" target="_blank"
+						>https://www.youtube.com/watch?v=WnpbKoYhTEY</a
 					>
 				</p>
 				<div class="modal-action">
 					<label
 						for="food-details"
-						class="px-12 py-4 text-xl bg-red-700 text-white rounded-md font-bold cursor-pointer"
+						class="py-2 px-5 text-xs lg:px-12 lg:py-4 lg:text-xl bg-red-700 text-white rounded-md font-bold cursor-pointer"
 						>Close</label
 					>
 				</div>
