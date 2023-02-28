@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Restaurant</title>
+
+		<!-- Font Awesome JS -->
+		<script
+			src="https://kit.fontawesome.com/a7b98052d6.js"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- DaisyUI -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/daisyui@2.51.1/dist/full.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						colors: {
+							warning: '##FFC107',
+						},
+						fontFamily: {
+							poppins: ['Poppins', 'sans-serif'],
+						},
+					},
+					container: {
+						center: true,
+						padding: {
+							DEFAULT: '1rem',
+							md: '3rem',
+							lg: '4rem',
+							xl: '4rem',
+							'2xl': '4rem',
+						},
+					},
+				},
+			};
+		</script>
+	</head>
+	<body class="font-poppins">
+		<header
+			class="container md:container lg:container my-7 flex flex-col gap-4 md:flex-row justify-between items-center"
+		>
+			<h1 class="text-3xl font-bold">Tasty HUT</h1>
+			<button
+				class="bg-warning py-4 px-10 rounded-lg font-bold text-xl capitalize"
+			>
+				Sign Up
+			</button>
+		</header>
+
+		<main>
+			<!-- banner -->
+			<section class="bg-[url('./images/banner_1.png')] bg-cover">
+				<div
+					class="container md:container lg:container flex flex-col justify-center items-center h-2/3"
+				>
+					<div class="max-w-2xl py-5 md:py-32 lg:py-64">
+						<h1 class="text-3xl md:text-6xl font-bold text-white text-center">
+							Taste Our Delicious Best Foods
+						</h1>
+						<p
+							class="text-sm md:text-lg font-normal text-white py-6 text-center"
+						>
+							There are many variations of passages of Lorem Ipsum available,
+							but the majority have suffered alteration in some form, by
+							injected humou.
+						</p>
+						<div class="flex flex-wrap justify-center items-center w-full">
+							<i
+								class="fa-solid fa-magnifying-glass text-[16px] text-[#706F6F] bg-white py-5 px-5 rounded-tl-lg rounded-bl-lg"
+							></i>
+							<input
+								id="search-value"
+								type="text"
+								placeholder="Search any food"
+								class="py-4 focus:outline-0 rounded-tr-lg rounded-br-lg w-2/3"
+							/>
+							<span
+								class="bg-warning py-[14px] px-10 rounded-lg font-bold text-xl capitalize -ml-3 cursor-pointer my-4 md:my-0"
+								>Search</span
+							>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- food -->
+			<section class="container md:container lg:container my-28">
+				<h1 class="text-4xl font-bold text-center tetx-[#100F0F]">
+					Your Favourite Food
+				</h1>
+				<div
+					id="food-container"
+					class="grid grid-cols-1 lg:grid-cols-2 gap-10 my-12"
+				>
+					<div class="flex flex-wrap md:flex-nowrap items-center gap-5">
+						<img
+							src="https://picsum.photos/600"
+							class="rounded-tr-xl rounded-tl-xl w-full md:h-[300px] md:w-[230px]"
+							alt="Movie"
+						/>
+						<div>
+							<h2 class="text-2xl font-bold tetx-[#403F3F]">Chicken Handi</h2>
+							<p class="text-lg font-normal my-4 text-[#706F6F]">
+								There are many variations of passages of available, but the
+								majority have suffered
+							</p>
+							<!-- The button to open modal -->
+							<label
+								for="food-details"
+								class="text-lg font-semibold text-warning underline cursor-pointer"
+							>
+								View Details
+							</label>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="bg-[#FFFCDD] mt-6">
+			<section class="container md:container lg:container py-16">
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-[#403F3F] font-medium text-xl text-center md:text-left"
+				>
+					<div>
+						<h2 class="text-2xl my-7 font-bold text-[#403F3F]">Section</h2>
+						<p class="my-4">Home</p>
+						<p class="my-4">Features</p>
+						<p class="my-4">Pricing</p>
+						<p class="my-4">FAQs</p>
+						<p class="my-4">About</p>
+					</div>
+					<div>
+						<h2 class="text-2xl my-7 font-bold text-[#403F3F]">Service</h2>
+						<p class="my-4">UI/UX Design</p>
+						<p class="my-4">Product Design</p>
+						<p class="my-4">Back End Developer</p>
+						<p class="my-4">Front End Developer</p>
+					</div>
+					<div>
+						<h2 class="text-2xl my-7 font-bold text-[#403F3F]">Resource</h2>
+						<p class="my-4">FAQ</p>
+						<p class="my-4">Support</p>
+						<p class="my-4">Privacy Policy</p>
+						<p class="my-4">Terms of Service</p>
+					</div>
+					<div>
+						<h2 class="text-2xl my-7 font-bold text-[#403F3F]">
+							Subscribe to our newsletter
+						</h2>
+						<p class="my-3 text-[#706F6F] font-normal text-lg">
+							There are many variations of passages of available, but the
+							majority have suffered
+						</p>
+						<div
+							class="flex flex-wrap md:flex-nowrap justify-center items-center gap-4"
+						>
+							<input
+								type="text"
+								placeholder="Email address"
+								class="text-lg py-4 px-6 focus:outline-0 rounded-lg border-separate border border-[#cfcdc5] w-full md:w-2/3"
+							/>
+							<button
+								class="bg-warning py-[14px] px-7 rounded-lg font-bold text-xl border-2 border-warning"
+							>
+								Search
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</footer>
+
+		<!-- Modal -->
+		<input type="checkbox" id="food-details" class="modal-toggle" />
+		<div class="modal modal-bottom sm:modal-middle">
+			<div class="modal-box">
+				<h3 class="font-bold text-lg">Congratulations random Internet user!</h3>
+				<p class="py-4">
+					You've been selected for a chance to get one year of subscription to
+					use Wikipedia for free!
+				</p>
+				<div class="modal-action">
+					<label for="food-details" class="btn">Yay!</label>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/script.js"></script>
+	</body>
+</html>
